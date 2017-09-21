@@ -1,0 +1,19 @@
+{
+  "name": "gendouyun",
+  "version": "0.0.1",
+  "description": "new navigation web site",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --use_strict app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "arleigh",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1"
+  }
+}
