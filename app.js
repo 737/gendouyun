@@ -3,11 +3,12 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const routersController = require('./controller');
 const view = require('./view');
+const static = require('./static');
 
 const app = new Koa();
 const router = new Router();
 
-let isprd = false;
+let isProduction = process && process.env.NODE_ENV === 'prd';
 
 app
     .use(async (ctx, next) => {
@@ -20,9 +21,10 @@ app
          // 打印耗费时间    
         console.log(`Time: ${ms}ms`);
     })
+    .use(static('/static/', './static'))
     .use(view('view', {
-        noCache: !isprd,
-        watch: !isprd
+        noCache: !isProduction,
+        watch: !isProduction
     }))
     .use(routersController())
     .listen(3000);
