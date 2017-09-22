@@ -27,6 +27,6 @@ app
         watch: !isProduction
     }))
     .use(routersController())
-    .listen(3000);
+    .listen(80);
 
 console.log('app started at port 3000...');
