@@ -4,10 +4,10 @@ const config = require('../../app.config');
 log4js.configure({
     appenders: {
         cat: {
-            type: '@ctrip/cat-appender',
+            type: 'gendouyun/cat-appender',
         },
         clog: {
-            type: '@ctrip/clog-appender',
+            type: 'gendouyun/clog-appender',
         },
         file: {
             type: 'dateFile',
