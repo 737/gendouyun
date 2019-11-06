@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="dns-prefetch" href="//pic.c-ctrip.com" />
+    <link rel="dns-prefetch" href="//res.m.ctrip.com" />
+    <link rel="dns-prefetch" href="//images4.c-ctrip.com" />
+    <link rel="dns-prefetch" href="//webresource.c-ctrip.com" />
+    <link rel="dns-prefetch" href="//pages.ctrip.com" />
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui,viewport-fit=cover" />
+    <meta name="applicable-device" content="mobile" />
+    <meta name="apple-mobile-web-app-title" content="携程酒店" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/2.0.1/weui.min.css">
+    <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        (function () {
+            if (!window.$_bf || !window.$_bf.loaded) {
+                var a = new Date,
+                    b = "?v=" + a.getFullYear() + a.getMonth() + "_" + a.getDate(),
+                    a = document.createElement("script");
+                a.setAttribute("crossorigin", "1");
+                a.type = "text/javascript";
+                a.charset = "utf-8";
+                a.async = !0;
+                a.src = "//webresource.c-ctrip.com/code/ubt/_mubt.min.js" + b;
+                b = document.getElementsByTagName("script")[0];
+                b.parentNode.insertBefore(a, b)
+            }
+        })();
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var fontSize = 17 * (clientWidth / 320);
+                    fontSize = Math.round((fontSize > 27) ? 27 : fontSize);
+                    docEl.style.fontSize = fontSize + 'px';
+                    var dpi = window.devicePixelRatio;
+                    docEl.setAttribute('data-dpi', dpi);
+                };
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+        (function () {
+            // 检测浏览器是否支持webp
+            try {
+                const WebP = new Image();
+                WebP.onload = WebP.onerror = () => {
+                    window.__supportWebP__ = WebP.height === 1; // eslint-disable-line no-underscore-dangle
+                    document.cookie = 'supportwebp=' + window.__supportWebP__ + ';path=/webapp/hotel;expires=' +
+                        (new Date('01/01/2200')).toGMTString();
+                };
+                WebP.src = 'data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';
+            } catch (e) {
+                // ignore
+            }
+        })();
+        window.onload = function () {
+            document.addEventListener('touchstart',
+                function (event) {
+                    if (event.touches.length > 1) {
+                        event.preventDefault();
+                    }
+                });
+            var lastTouchEnd = 0;
+            document.addEventListener('touchend',
+                function (event) {
+                    var now = (new Date()).getTime();
+                    if (now - lastTouchEnd <= 300) {
+                        event.preventDefault();
+                    }
+                    lastTouchEnd = now;
+                },
+                false);
+        }
+    </script>
+    <!--vue-ssr-outlet-->
+</body>
+
+</html>

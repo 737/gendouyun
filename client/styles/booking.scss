@@ -1,0 +1,111 @@
+@import './variables.scss';
+$purple:#2A2E5D;
+
+.booking {
+    // position: relative;
+    background-color: #F6F8FA;
+    padding: 32rem/$fit 24rem/$fit 0;
+    min-height: 100vh;
+
+    .header {
+        background: #FFFFFF;
+        box-shadow: 0 4rem/$fit 16rem/$fit 1rem/$fit rgba(66, 81, 101, 0.10);
+        border-radius: 12rem/$fit;
+    }
+
+    .room {
+        background-image: linear-gradient(133deg, #35385E 0%, #1F2242 100%);
+        border-radius: 12rem/$fit;
+        padding: 32rem/$fit 32rem/$fit 40rem/$fit;
+        color: #FFFFFF;
+
+        h4 {
+            font-size: 28rem/$fit;
+            letter-spacing: -0.17rem/$fit;
+            line-height: 28rem/$fit;
+        }
+    }
+
+    .room-content {
+        display: flex;
+        margin-top: 40rem/$fit;
+    }
+
+    .room-pic {
+        width: 162rem/$fit;
+        height: 162rem/$fit;
+        border-radius: 12rem/$fit;
+
+        img {
+            flex: 1,
+        }
+    }
+
+    .room-desc {
+        flex: 1;
+
+        h3 {
+            font-size: 32rem/$fit;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            line-height: 40rem/$fit;
+        }
+    }
+
+    .price {
+        margin-top: 20rem/$fit;
+        font-weight: 300;
+    }
+
+    .tags {
+        margin-top: 24rem/$fit;
+
+        span {
+            margin-right: 32rem/$fit;
+            font-size: 24rem/$fit;
+            color: #F8B587;
+            letter-spacing: 0;
+            line-height: 24rem/$fit;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .pay-type {
+        background: #FFFFFF;
+ border-radius: 12rem/$fit;
+        padding: 48rem/$fit 33rem/$fit;
+    }
+
+    .footer{
+        position: relative;
+        bottom: 0;
+    }
+
+    .pay-bar {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+    }
+
+    .check-box{
+        height: 42rem/$fit;
+        width: 42rem/$fit;
+        border-radius: 50%;
+        border: 2rem/$fit solid $purple;
+    }
+
+    .check-box-selected{
+        background-color: $purple;
+    }
+
+    .pay-name {
+        font-size: 32rem/$fit;
+        color: #333333;
+        letter-spacing: -0.77rem/$fit;
+        line-height: 32rem/$fit;
+    }
+}

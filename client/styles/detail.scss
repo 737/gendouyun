@@ -1,0 +1,224 @@
+@import './variables.scss';
+@import './cstyle.scss';
+
+
+.comment-root {
+    background-color: white;
+
+    dl,
+    menu,
+    ol,
+    ul {
+        margin: 0;
+    }
+
+    dd {
+        margin: 0;
+    }
+
+    menu,
+    ol,
+    ul {
+        padding: 0;
+    }
+
+    ul,
+    nav ul,
+    nav ol {
+        list-style: none;
+        list-style-image: none;
+    }
+
+    .mt8 { margin-top: 8rem/$fit; }
+    .ml20 { margin-left: 20rem/$fit; }
+    .ml32 { margin-left: 32rem/$fit; }
+}
+
+.header-wrap {
+    height: 2.25rem;
+    line-height: 2.25rem;
+    padding: 0 1rem;
+
+    .name {
+        font-size: 1rem;
+        color: #333333;
+        vertical-align: middle;
+    }
+
+    .tag {
+        width: 1.7rem;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        background-image: linear-gradient(92deg, #484b79 0%, #323666 100%);
+        border-radius: 4px;
+        font-size: 0.6rem;
+        color: #fed2a8;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .watch {
+        display: inline-block;
+        float: right;
+
+        .txt {
+            width: 4.2rem;
+            height: 1.3rem;
+            background-image: linear-gradient(135deg, #484b79 0%, #323666 100%);
+            border-radius: 39px;
+            font-size: 0.8rem;
+            color: #fed2a8;
+            vertical-align: middle;
+            display: inline-block;
+            text-align: center;
+            line-height: 1.3rem;
+            color: #ffffff;
+        }
+    }
+}
+
+.slider {
+    width: 100%;
+    height: 16rem;
+    position: relative;
+
+    .image-wrap {
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .pnumber {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, .3);
+        border-radius: 18px;
+        width: 2.3rem;
+        height: 1.1rem;
+        text-align: center;
+        margin-bottom: 80rem/$fit;
+        margin-right: 1.5rem;
+
+        .txt {
+            font-size: 0.8rem;
+            color: white;
+        }
+    }
+}
+
+.info-block {
+    background: #ffffff;
+    box-shadow: 0 4px 16px 1px rgba(66, 81, 101, 0.10);
+    border-radius: 12px;
+    padding: 1rem 0.8rem;
+    display: flow-root;
+    margin: 0 24rem/$fit 20rem/$fit;
+    ;
+
+    h1 {
+        font-size: 32rem/$fit;
+        color: #333;
+    }
+}
+
+.name-price {
+    margin-top: -60rem/$fit;
+    z-index: 2;
+    position: relative;
+
+    .price-count {
+        margin-bottom: 36rem/$fit;
+
+        .cny {
+            font-size: 32rem/$fit;
+            color: #FF6F3F;
+        }
+
+        .salePrice {
+            font-size: 40rem/$fit;
+            color: #FF6F3F;
+            margin-left: 4rem/$fit;
+        }
+
+        .originPrice {
+            font-size: 24rem/$fit;
+            color: #999999;
+            text-decoration: line-through;
+            margin-left: 13rem/$fit;
+        }
+
+        .count {
+            font-size: 28rem/$fit;
+            color: #333333;
+            float: right;
+        }
+    }
+
+    .name {
+        font-size: 0.7rem;
+        color: #333333;
+        margin-bottom: 24rem/$fit;
+
+        span {
+            vertical-align: middle;
+            display: inline-block;
+            line-height: normal;
+        }
+    }
+
+    .mr32 {
+        margin-right: 32rem/$fit;
+    }
+}
+
+.group {
+    ul {
+        margin-top: 40rem/$fit;
+        font-size: 28rem/$fit;
+        color: #333333;
+
+        li {
+            margin-bottom: 32rem/$fit;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .dot {
+        margin-right: 20rem/$fit;
+    }
+}
+
+.room-status {
+    & > div {
+        margin-top: 40rem/$fit;
+    }
+        
+    .calendar {
+        font-size: 28rem/$fit;
+        color: #333333;
+
+        li {
+            width: 86rem/$fit;
+            height: 116rem/$fit;
+            margin: 0 20rem/$fit;
+        }
+    }
+
+    .calendar-icon {
+        width: 110rem/$fit;
+        height: 116rem/$fit;
+        font-size: 28rem/$fit;
+        color: #3A3D66;
+        border-left: 1rem/$fit solid #CCD6E5;
+    }
+}
+
+

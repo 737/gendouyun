@@ -1,0 +1,96 @@
+.head-title {
+    margin-top: 3rem;
+    margin-left: 2.1rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.35rem;
+    color: #3a3d66;
+    font-weight: 700;
+}
+.head-hotel-wrapper {
+    margin: 0 2.1rem 2rem;
+}
+.head-hotelname {
+    font-size: 0.8rem;
+    color: #333;
+}
+.head-tag-wrapper {
+    display: inline-block;
+    padding: 0.1rem 0.15rem;
+    font-size: 0;
+    border-radius: 4px;
+    background-image: linear-gradient(92deg, #484b79 0%, #323666 100%);
+}
+.head-tag-wrapper .tagtxt {
+    font-size: 0.55rem;
+    color: #fed2a8;
+}
+
+.login-form {
+    margin: 0 2.1rem;
+}
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.form-wrapper .icon {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.form-wrapper .inputbox {
+    outline-style: none;
+    border: 0;
+    border-bottom: 1px solid #ccd6e5;
+    padding-right: 0.2rem;
+    height: 3.2rem;
+    width: 100%;
+}
+.form-wrapper input::-webkit-input-placeholder {
+    color: #ccd6e5;
+}
+.form-line {
+    border-bottom-width: 1px;
+    border-bottom-color: #ccd6e5;
+}
+.validCode-btn {
+    border-left: 1px solid #ccd6e5;
+    color: #3a3d66;
+    font-size: 0.8rem;
+    padding: 0 0.5rem;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 1.2rem;
+}
+.warning-txt {
+    position: absolute;
+    bottom: 0rem;
+    left: 2.3rem;
+    color: #d22126;
+    font-size: 0.2rem;
+}
+
+.login-btn {
+    height: 1.95rem;
+    line-height: 1.95rem;
+    margin: 3rem 0;
+    padding: 0.55rem 0.75rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 1rem;
+    background-image: linear-gradient(92deg, #484b79 0%, #323666 100%);
+}
+
+.login-footer {
+    position: fixed;
+    bottom: 1rem;
+    margin: 0 0.8rem;
+    color: #aaa;
+    font-size: 0.6rem;
+    font-weight: 300;
+}
+.login-footer .footertxt {
+    color: #aaa;
+    font-size: 0.6rem;
+    font-weight: 300;
+}
