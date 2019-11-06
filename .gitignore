@@ -1,0 +1,62 @@
+# IntelliJ project files
+.idea
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea/artifacts/h5hotel4j_war_exploded.xml
+.idea/workspace.xml
+*.DS_Store
+h5hotel4j.iml
+rebel.xml
+target
+
+
+out
+gen
+catalina.home_IS_UNDEFINED
+log.server_IS_UNDEFINED
+
+# protobuf files
+*.proto
+
+# Maven
+target/
+*.ser
+*.ec
+
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+
+#Generated config files
+__ConfigTemp/
+src/main/resources/Dal.config
+src/main/resources/config.properties
+src/main/resources/logback.xml
+#src/main/webapp/WEB-INF/web.xml
+
+#Tomcat
+Environment/Tomcat/Tomcat 7.0/temp
+Environment/Tomcat/Tomcat 7.0/webapps
+
+# nodejs
+node_modules/
+/.idea
+assets/dist/
+!assets/dist/.ares/
+/npm-debug.log
+
+# sonar
+.sonar/
+/webapp-host/src/main/webapp/hybridpackage/hotel
+/webapp-host/src/main/webapp/hybridpackage/hotel
+
+# dev model files
+cc.js
+cc.txt
+cc.json
+cc1.json
+
