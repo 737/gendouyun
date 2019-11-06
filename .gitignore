@@ -11,6 +11,8 @@ h5hotel4j.iml
 rebel.xml
 target
 
+package-lock.json
+build.json
 
 out
 gen

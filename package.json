@@ -1,5 +1,5 @@
 {
-  "name": "offical_h5_web",
+  "name": "gendouyun",
   "version": "0.0.1",
   "description": "",
   "main": "server.js",
@@ -12,10 +12,6 @@
     "postinstall": "npm run build"
   },
   "dependencies": {
-    "@ctrip/ares": "1.0.9",
-    "@ctrip/cat-appender": "2.0.2",
-    "@ctrip/clog-appender": "2.0.0",
-    "@ctrip/qconfig-client": "1.0.12",
     "axios": "0.18.0",
     "cross-env": "5.2.0",
     "ctriputil": "0.1.40",
@@ -30,7 +26,7 @@
     "log4js": "5.1.0",
     "lru-cache": "4.1.1",
     "memory-fs": "0.4.1",
-    "moment": "2.24.0",
+    "moment": "^2.24.0",
     "uuid": "3.2.1",
     "vue": "2.5.17",
     "vue-router": "3.0.1",
@@ -39,14 +35,14 @@
     "vuex-router-sync": "5.0.0",
     "weixin-js-sdk": "1.4.0-test"
   },
-  "author": "zx",
+  "author": "Arleigh",
   "license": "GPL-3.0",
   "engines": {
     "node": "8.9.4",
     "npm": "5.6.0"
   },
   "config": {
-    "vd": "/webapp/hotelofficial",
+    "vd": "/",
     "port": 8080,
     "env": "DEV"
   },
