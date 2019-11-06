@@ -12,11 +12,7 @@
                     <span>.</span>
                     <span>我的位置</span>
                 </div>
-                <ul v-if="guessYouWantCity">
-                    <li v-for="city in guessYouWantCity" :key="city.cityId">
-                        {{city.cityName}}
-                    </li>
-                </ul>
+                
             </div>
         </div>
 
@@ -24,18 +20,7 @@
 </template>
 
 <script>
-    export default {
-        computed: {
-            guessYouWantCity() {
-                return this.$store.state.home.staticInfo.guessYouWantCity;
-            }
-        },
-        asyncData({
-            store
-        }) {
-            return store.dispatch('getHomeStaticInfo');
-        }
-    }
+
 </script>
 
 <style lang="scss" scoped>
