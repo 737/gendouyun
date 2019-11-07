@@ -37,7 +37,7 @@
     "npm": "5.6.0"
   },
   "config": {
-    "vd": "/",
+    "vd": "/webapp/",
     "port": 8080,
     "env": "DEV"
   },
