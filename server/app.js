@@ -6,6 +6,7 @@ const Router = require('koa-router');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 const webpackDevMiddleware = require("webpack-dev-middleware");
+const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const resolve = file => path.resolve(__dirname, file);
 const template = require('./template.js');
@@ -46,9 +47,20 @@ const devMiddleware = (complier, ops) => {
     }
 };
 
+const hotMiddleware = (complier, ops) => {
+    const middleware = webpackHotMiddleware(complier, ops);
+
+    return (ctx, next) => {
+        return new Promise((resolve) => {
+            middleware(ctx.req, ctx.res, resolve);
+        }).then(next);
+    }
+};
+
 app.use(devMiddleware(complier, {
     publicPath: webpackConfig.output.publicPath
 }));
+app.use(hotMiddleware(complier));
 
 router.get('/', async (ctx, next) => {
     ctx.body = template;
