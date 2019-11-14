@@ -62,7 +62,7 @@ app.use(devMiddleware(complier, {
 app.use(hotMiddleware(complier));
 
 
-app.use(router.routes());
+// app.use(router.routes(), router.allowedMethods());
 
 app.listen(port, () => {
     const message = `load config with: ${JSON.stringify(

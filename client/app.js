@@ -1,8 +1,25 @@
-if (module.hot) {
-    module.hot.accept();
-}
+import Vue from 'vue';
+import App from './App.vue';
+import VueRouter from 'vue-router';
+const Todolist = require('./views/todolist/index.vue');
 
-// var app = document.getElementById("app");
-// app.innerHTML = "hello koa 111";
 
-console.log(2);
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+    mode: 'history',
+    base: __dirname,
+    routes: [{
+        path: '/todolist',
+        name: 'todolist',
+        component: Todolist
+    }]
+});
+
+
+new Vue({
+    router: router,
+    render: h => h(App)
+}).$mount('#app');
+
+

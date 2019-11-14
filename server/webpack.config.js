@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader');
 
 const resolve = file => path.resolve(__dirname, file);
 
@@ -15,6 +16,12 @@ module.exports = {
         publicPath: '/',
         filename: '[name].bundle.js',
     },
+    module: {
+        rules: [{
+            test: /\.vue$/,
+            loader: 'vue-loader',
+        }]
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
@@ -22,5 +29,6 @@ module.exports = {
             template: './server/index.template.html',
             inject: true
         }),
+        new VueLoaderPlugin()
     ]
 };
