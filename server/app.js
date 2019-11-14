@@ -9,7 +9,6 @@ const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const resolve = file => path.resolve(__dirname, file);
-const template = require('./template.js');
 const router = new Router();
 
 let config = {};
