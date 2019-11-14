@@ -62,11 +62,6 @@ app.use(devMiddleware(complier, {
 }));
 app.use(hotMiddleware(complier));
 
-router.get('/', async (ctx, next) => {
-    ctx.body = template;
-
-    await next();
-});
 
 app.use(router.routes());
 
