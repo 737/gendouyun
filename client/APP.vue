@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <div>i am app.vue</div>
-    <router-link to="todolist">todolist</router-link>
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>

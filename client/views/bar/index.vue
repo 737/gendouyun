@@ -1,8 +1,7 @@
 <template>
   <div>
-      about vue
+      bar
 
   </div>
 </template>
-
 
