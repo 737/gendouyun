@@ -13,6 +13,9 @@ const router = new VueRouter({
         path: '/todolist',
         name: 'todolist',
         component: Todolist
+    }, {
+        path: '/',
+        component: App
     }]
 });
 

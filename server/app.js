@@ -7,6 +7,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const historyApiFallback = require('connect-history-api-fallback');
 
 const resolve = file => path.resolve(__dirname, file);
 const router = new Router();
@@ -31,6 +32,8 @@ complier.plugin('done', (stats) => {
     console.log('done')
 });
 
+
+
 const devMiddleware = (complier, ops) => {
     const middleware = webpackDevMiddleware(complier, ops);
 
@@ -46,6 +49,8 @@ const devMiddleware = (complier, ops) => {
     }
 };
 
+
+
 const hotMiddleware = (complier, ops) => {
     const middleware = webpackHotMiddleware(complier, ops);
 
@@ -55,6 +60,25 @@ const hotMiddleware = (complier, ops) => {
         }).then(next);
     }
 };
+
+app.use(async (ctx, next) => {
+    const middleware = historyApiFallback();
+
+    middleware(ctx.req, null, () => {});
+
+    await next();
+});
+
+
+app.use(async (ctx, next) => {
+    const start = Date.now();
+
+    await next();
+
+    const ms = Date.now() - start;
+    console.log(`${ctx.method}, ${ctx.url}, -- ${ms}`);
+    
+});
 
 app.use(devMiddleware(complier, {
     publicPath: webpackConfig.output.publicPath
