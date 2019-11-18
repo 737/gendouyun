@@ -4,6 +4,7 @@ import App from './App.vue';
 import VueRouter from 'vue-router';
 // const Todolist = require('./views/todolist/index.vue').default;
 import Todolist from './views/todolist/index.vue';
+import Home from './views/home/index.vue';
 const Bar = require('./views/bar/index.vue').default;
 
 
@@ -22,7 +23,7 @@ const router = new VueRouter({
         component: Bar
     }, {
         path: '*',
-        component: Bar
+        component: Home
     }]
 });
 

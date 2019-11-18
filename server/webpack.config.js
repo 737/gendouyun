@@ -20,6 +20,9 @@ module.exports = {
         rules: [{
             test: /\.vue$/,
             loader: 'vue-loader',
+        }, {
+            test: /\.(sc|c)ss$/,
+            loader: ['vue-style-loader', 'css-loader', 'sass-loader']
         }]
     },
     plugins: [

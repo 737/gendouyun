@@ -1,0 +1,77 @@
+
+$fit: 144;
+
+.clrBlack { color: #000 }
+.clrWhite { color: #fff }
+.clr333 { color: #333 }
+.clr999 { color: #999 }
+.clrB2 { color: #b2b2b2 }
+
+.bgBlack { background-color: #000 }
+.bgBlue { background-color: blue }
+.bgRed { background-color: red }
+.bgTrans { background-color: transparent }
+.bgGreen { background-color: #008000 }
+.bgWhite { background-color: #fff }
+.bgYellow { background-color: #FFFF00 }
+
+.df { display: flex; }
+.disFlex { display: flex; }
+.disAuto { display: auto; }
+
+.flexAuto { flex: 1 }
+.flexRow { flex-direction: row }
+.flexColumn { flex-direction: column }
+.flexCenter { justify-content: center; align-items: center }
+
+/* justify-content */
+.justStart { justify-content: flex-start }
+.justEnd { justify-content: flex-end }
+.justCenter { justify-content: center }
+.justBetween { justify-content: space-between }
+.justAround { justify-content: space-around }
+
+/* align-content */
+.alonStart { align-content: flex-start }
+.alonEnd { align-content: flex-end }
+.alonCenter { align-content: center }
+.alonBetween { align-content: space-between }
+.alonAround { align-content: space-around }
+.alonStretch { align-content: stretch }
+
+/* align-items */
+.algnStart { align-items: flex-start }
+.algnEnd { align-items: flex-end }
+.algnCenter { align-items: center }
+.algnBaseline { align-items: baseline }
+.algnStretch { align-items: stretch }
+
+/* align-self */
+.selfAuto { align-self: auto }
+.selfStart { align-self: flex-start }
+.selfEnd { align-self: flex-end }
+.selfCenter { align-self: center }
+.selfBaseline { align-self: baseline }
+.selfStretch { align-self: stretch }
+
+@mixin color($val) { color: $val; }
+
+@mixin fz($number) { font-size: $number/$fit + rem; }
+@mixin lh($number) { line-height: $number/$fit + rem; }
+@mixin fw($number) { font-weight: $number/$fit + rem; }
+
+@mixin m($umber) { margin: $number/$fit + rem; }
+@mixin mh($number) { margin-left: $number/$fit + rem; margin-right: $number/$fit + rem; }
+@mixin mv($number) { margin-top: $number/$fit + rem; margin-bottom: $number/$fit + rem; }
+@mixin mt($number) { margin-top: $number/$fit + rem; }
+@mixin mr($number) { margin-right: $number/$fit + rem; }
+@mixin mb($number) { margin-bottom: $number/$fit + rem; }
+@mixin ml($number) { margin-left: $number/$fit + rem; }
+
+@mixin p($umber) { padding: $number/$fit + rem; }
+@mixin ph($number) { padding-left: $number/$fit + rem; padding-right: $number/$fit + rem; }
+@mixin pv($number) { padding-top: $number/$fit + rem; padding-bottom: $number/$fit + rem; }
+@mixin pt($number) { padding-top: $number/$fit + rem; }
+@mixin pr($number) { padding-right: $number/$fit + rem; }
+@mixin pb($number) { padding-bottom: $number/$fit + rem; }
+@mixin pl($number) { padding-left: $number/$fit + rem; }
