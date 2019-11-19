@@ -4,9 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=production node server.js",
-    "start": "cross-env NODE_ENV=production node server.js",
-    "build:server": "cross-env NODE_ENV=production webpack --config build/webpack.server.config.js --progress --hide-modules"
+    "dev": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
     "axios": "0.18.0",

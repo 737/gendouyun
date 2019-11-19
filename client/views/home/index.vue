@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <div class="top-column">
       <p>g.g</p>
     </div>
@@ -25,7 +25,7 @@
       </div>
       
     </div>
-  </div>
+  </section>
 </template>
 
 
