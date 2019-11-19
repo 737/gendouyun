@@ -58,7 +58,7 @@
                 }
                 docEl.removeChild(fakeBody)
             }
-        }(window, document))
+        }(window, document));
 
         (function () {
             // 检测浏览器是否支持webp
@@ -74,6 +74,7 @@
                 // ignore
             }
         })();
+        
         window.onload = function () {
             document.addEventListener('touchstart',
                 function (event) {
