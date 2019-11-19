@@ -21,4 +21,16 @@
     font-size: 14rem / $fit;
     height: 30rem / $fit;
     border: 1rem/$fit solid #dee3eb;
+    margin-bottom: 10rem / $fit;
+}
+
+.user-sites {
+    font-size: 14rem / $fit;
+
+    display: flex;
+
+    li {
+        margin-left: 24rem/$fit;
+        width: 80rem/$fit;
+    }
 }

@@ -21,6 +21,8 @@ $fit: 144;
 
 .flexAuto { flex: 1 }
 .flexRow { flex-direction: row }
+.flexWrap { flex-wrap: wrap; }
+.flexNoWrap { flex-wrap: nowrap; }
 .flexColumn { flex-direction: column }
 .flexCenter { justify-content: center; align-items: center }
 
