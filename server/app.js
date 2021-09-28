@@ -1,99 +1,70 @@
-
 const path = require('path');
 const koa = require('koa');
-const koaStaticPlus = require('koa-static-plus');
-const Router = require('koa-router');
-const webpack = require('webpack');
-const webpackConfig = require('./webpack.config.js');
-const webpackDevMiddleware = require("webpack-dev-middleware");
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const historyApiFallback = require('connect-history-api-fallback');
+const helmet = require('koa-helmet');
+const staticServer = require('koa-static-cache');
+const LRU = require('lru-cache');
+const bodyParser = require('koa-bodyparser');
+const Ignite = require('./ignite');
 
 const resolve = file => path.resolve(__dirname, file);
-const router = new Router();
-
-let config = {};
-
-try {
-    Object.assign(config, require(path.resolve('./package.json')).config);
-} catch (e) {
-    console.warn('Load package.json failed!')
-}
-
-const vd = config.vd;
-const port = config.port;
-const app = new koa();
-
-// app.use(koaStaticPlus(resolve('../dist'), { pathPrefix: vd + 'dist' }));
-
-const complier = webpack(webpackConfig);
-
-complier.plugin('done', (stats) => {
-    console.log('done')
-});
+const router = require('./router');
+const config = require(path.resolve('./package.json')).config;
+const middleware = require('./middleware');
+const globalState = require('./middleware/global');
+const instanceId = process.env.NODE_APP_INSTANCE || 'default';
+const vd = config.vd && config.vd !== '/' ? config.vd : '/';
+const port = config.port || process.env.PORT || 8080;
+// 避免OOM
+var files = new LRU({ max: 1000 });
 
 
+// app.use(async (ctx, next) => {
+//     const start = Date.now();
 
-const devMiddleware = (complier, ops) => {
-    const middleware = webpackDevMiddleware(complier, ops);
+//     await next();
 
-    return async (ctx, next) => {
-        await middleware(ctx.req, {
-            end: (content) => {
-                ctx.body = content;
-            },
-            setHeader: (name, value) => {
-                ctx.set(name, value);
-            }
-        }, next)
-    }
-};
+//     const ms = Date.now() - start;
+//     console.log(`${ctx.method}, ${ctx.url}, -- ${ms}`);
 
+// });
 
+const newStaticPath = resolve('../dist');
+const newStaticOutputPath = vd;
+const _SERVICE_IGNITE_STATUS_ = {};
+const _SERVICE_NODEJS_CONFIG_ = {};
 
-const hotMiddleware = (complier, ops) => {
-    const middleware = webpackHotMiddleware(complier, ops);
+Ignite.exec(_SERVICE_IGNITE_STATUS_, _SERVICE_NODEJS_CONFIG_).then(() => {
+    const state = {};
+    const app = new koa();
 
-    return (ctx, next) => {
-        return new Promise((resolve) => {
-            middleware(ctx.req, ctx.res, resolve);
-        }).then(next);
-    }
-};
+    Object.assign(state, {
+        _SERVICE_IGNITE_STATUS_,
+        _SERVICE_NODEJS_CONFIG_,
+    });
 
-app.use(async (ctx, next) => {
-    const middleware = historyApiFallback();
+    Object.assign(_SERVICE_NODEJS_CONFIG_, config);
 
-    middleware(ctx.req, null, () => {});
+    app.use(staticServer({
+        dir: newStaticPath,
+        prefix: newStaticOutputPath,
+        dynamic: true,
+        files: files,
+        gzip: true
+    }))
+    // 将请求体转换为 JSON 的中间件
+    app.use(bodyParser());
+    // 配置Koa下的一些安全策略，参考：https://github.com/venables/koa-helmet#readme
+    app.use(helmet());
+    app.use(globalState(state));
 
-    await next();
-});
+    router(app, vd);
 
+    app.listen(port, () => {
+        const message = `load config with: ${JSON.stringify(config)}, mount route at ${vd}, start at port ${port}`;
 
-app.use(async (ctx, next) => {
-    const start = Date.now();
+        console.log('application message', message);
+    });
 
-    await next();
-
-    const ms = Date.now() - start;
-    console.log(`${ctx.method}, ${ctx.url}, -- ${ms}`);
-    
-});
-
-app.use(devMiddleware(complier, {
-    publicPath: webpackConfig.output.publicPath
-}));
-app.use(hotMiddleware(complier));
-
-
-// app.use(router.routes(), router.allowedMethods());
-
-app.listen(port, () => {
-    const message = `load config with: ${JSON.stringify(
-        config,
-    )}, mount route at ${vd}, start at port ${port}`;
-
-    console.log('application message', message);
 });
 
 

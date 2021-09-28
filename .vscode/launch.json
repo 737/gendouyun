@@ -7,16 +7,10 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch dev",
-            "program": "${workspaceRoot}/server.js"
-        },
-        {
-            "type": "node",
-            "request": "launch",
             "name": "Launch start",
-            "program": "${workspaceRoot}\\app.js",
+            "program": "${workspaceRoot}/server.js",
             "env": {
-                "NODE_ENV": "dev"       // dev prd
+                "NODE_ENV": "production"       // dev prd
             }
         }
     ]
