@@ -14,7 +14,7 @@
     },
     "config": {
         "vd": "/",
-        "port": 5387,
+        "port": 80,
         "env": "dev"
     },
     "dependencies": {
