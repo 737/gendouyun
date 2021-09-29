@@ -1,19 +1,45 @@
-# Build and Release Folders
-bin/
-bin-debug/
-bin-release/
-[Oo]bj/ # FlashDevelop obj
-[Bb]in/ # FlashDevelop bin
+# IntelliJ project files
+.idea
+.idea/
+*.iml
+*.ipr
+*.iws
+*.DS_Store
+rebel.xml
+target
 
-# Other files and folders
+package-lock.json
+build.json
+
+out
+gen
+log.server_IS_UNDEFINED
+
+# protobuf files
+*.proto
+
+# Maven
+target/
+*.ser
+*.ec
+
+# Eclipse
+.classpath
+.project
 .settings/
+.metadata/
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# nodejs
+node_modules/
+/.idea
+assets/dist/
+!assets/dist/.ares/
+/npm-debug.log
+
+# dev model files
+cc.js
+cc.txt
+cc.json
+cc1.json
+
