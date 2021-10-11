@@ -1,19 +1,22 @@
 
 <template>
     <header-component></header-component>
-    <a-slide></a-slide>
+    <side-bar-component></side-bar-component>
+    <content-component></content-component>
 </template>
 
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import HeaderComponent from "./header.vue";
-import ASlide from './aside.vue';
+import SideBarComponent from './sidebar.vue';
+import ContentComponent from './content.vue';
 
 export default defineComponent({
     components: {
         HeaderComponent,
-        ASlide
+        SideBarComponent,
+        ContentComponent
     },
 
     setup() {},
