@@ -17,8 +17,6 @@
 
 
 <style lang="scss" scoped>
-// @import "./var.scss";
-
 header {
     display: flex;
     position: fixed;
