@@ -1,4 +1,13 @@
 
 <template>
-    <div>You are at home now.</div>
+    <div class="title">You are at home now.</div>
 </template>
+
+
+<style lang="scss" scoped>
+$primary-color: red;
+
+.title {
+    color: $primary-color;
+}
+</style>
