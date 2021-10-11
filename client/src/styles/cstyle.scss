@@ -1,0 +1,79 @@
+
+$fit: 144;
+
+.color-black { color: #000 }
+.color-white { color: #fff }
+.color-333 { color: #333 }
+.color-999 { color: #999 }
+.color-b2 { color: #b2b2b2 }
+
+.bg-black { background-color: #000 }
+.bg-blue { background-color: blue }
+.bg-red { background-color: red }
+.bg-trans { background-color: transparent }
+.bg-green { background-color: #008000 }
+.bg-white { background-color: #fff }
+.bg-yellow { background-color: #ffff00 }
+
+.df { display: flex; }
+.display-flex { display: flex; }
+.display-auto { display: auto; }
+
+.flex-auto { flex: 1 }
+.flex-row { flex-direction: row }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+.flex-column { flex-direction: column }
+.flex-center { justify-content: center; align-items: center }
+
+/* justify-content */
+.just-start { justify-content: flex-start }
+.just-end { justify-content: flex-end }
+.just-center { justify-content: center }
+.just-between { justify-content: space-between }
+.just-around { justify-content: space-around }
+
+/* align-content */
+.alon-start { align-content: flex-start }
+.alon-end { align-content: flex-end }
+.alon-center { align-content: center }
+.alon-between { align-content: space-between }
+.alon-around { align-content: space-around }
+.alon-stretch { align-content: stretch }
+
+/* align-items */
+.algn-start { align-items: flex-start }
+.algn-end { align-items: flex-end }
+.algn-center { align-items: center }
+.algn-baseline { align-items: baseline }
+.algn-stretch { align-items: stretch }
+
+/* align-self */
+.self-auto { align-self: auto }
+.self-start { align-self: flex-start }
+.self-end { align-self: flex-end }
+.self-center { align-self: center }
+.self-baseline { align-self: baseline }
+.self-stretch { align-self: stretch }
+
+@mixin color($val) { color: $val; }
+
+@mixin fz($number) { font-size: $number/$fit + rem; }
+@mixin lh($number) { line-height: $number/$fit + rem; }
+@mixin fw($number) { font-weight: $number/$fit + rem; }
+
+@mixin m($umber) { margin: $number/$fit + rem; }
+@mixin mh($number) { margin-left: $number/$fit + rem; margin-right: $number/$fit + rem; }
+@mixin mv($number) { margin-top: $number/$fit + rem; margin-bottom: $number/$fit + rem; }
+@mixin mt($number) { margin-top: $number/$fit + rem; }
+@mixin mr($number) { margin-right: $number/$fit + rem; }
+@mixin mb($number) { margin-bottom: $number/$fit + rem; }
+@mixin ml($number) { margin-left: $number/$fit + rem; }
+
+@mixin p($umber) { padding: $number/$fit + rem; }
+@mixin ph($number) { padding-left: $number/$fit + rem; padding-right: $number/$fit + rem; }
+@mixin pv($number) { padding-top: $number/$fit + rem; padding-bottom: $number/$fit + rem; }
+@mixin pt($number) { padding-top: $number/$fit + rem; }
+@mixin pr($number) { padding-right: $number/$fit + rem; }
+@mixin pb($number) { padding-bottom: $number/$fit + rem; }
+@mixin pl($number) { padding-left: $number/$fit + rem; }

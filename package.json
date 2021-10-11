@@ -1,10 +1,11 @@
 {
-    "name": "gendouyun",
+    "name": "gendouyun_web_server",
     "version": "0.0.1",
     "description": "",
     "main": "server.js",
     "scripts": {
-        "start": "cross-env NODE_ENV=production node server.js"
+        "start": "cross-env NODE_ENV=production node server.js",
+        "dev": "cd client && npm run dev && cd .."
     },
     "author": "Arleigh",
     "license": "GPL-3.0",
@@ -28,7 +29,8 @@
         "koa-router": "7.4.0",
         "koa-static-cache": "^5.1.3",
         "log4js": "5.1.0",
-        "lru-cache": "4.1.1"
+        "lru-cache": "4.1.1",
+        "vite": "^2.6.0"
     },
     "devDependencies": {
         "request": "2.83.0"
