@@ -1,60 +1,60 @@
 
 $fit: 144;
 
-.clrBlack { color: #000 }
-.clrWhite { color: #fff }
-.clr333 { color: #333 }
-.clr999 { color: #999 }
-.clrB2 { color: #b2b2b2 }
+.color-black { color: #000 }
+.color-white { color: #fff }
+.color-333 { color: #333 }
+.color-999 { color: #999 }
+.color-b2 { color: #b2b2b2 }
 
-.bgBlack { background-color: #000 }
-.bgBlue { background-color: blue }
-.bgRed { background-color: red }
-.bgTrans { background-color: transparent }
-.bgGreen { background-color: #008000 }
-.bgWhite { background-color: #fff }
-.bgYellow { background-color: #FFFF00 }
+.bg-black { background-color: #000 }
+.bg-blue { background-color: blue }
+.bg-red { background-color: red }
+.bg-trans { background-color: transparent }
+.bg-green { background-color: #008000 }
+.bg-white { background-color: #fff }
+.bg-yellow { background-color: #ffff00 }
 
 .df { display: flex; }
-.disFlex { display: flex; }
-.disAuto { display: auto; }
+.display-flex { display: flex; }
+.display-auto { display: auto; }
 
-.flexAuto { flex: 1 }
-.flexRow { flex-direction: row }
-.flexWrap { flex-wrap: wrap; }
-.flexNoWrap { flex-wrap: nowrap; }
-.flexColumn { flex-direction: column }
-.flexCenter { justify-content: center; align-items: center }
+.flex-auto { flex: 1 }
+.flex-row { flex-direction: row }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+.flex-column { flex-direction: column }
+.flex-center { justify-content: center; align-items: center }
 
 /* justify-content */
-.justStart { justify-content: flex-start }
-.justEnd { justify-content: flex-end }
-.justCenter { justify-content: center }
-.justBetween { justify-content: space-between }
-.justAround { justify-content: space-around }
+.just-start { justify-content: flex-start }
+.just-end { justify-content: flex-end }
+.just-center { justify-content: center }
+.just-between { justify-content: space-between }
+.just-around { justify-content: space-around }
 
 /* align-content */
-.alonStart { align-content: flex-start }
-.alonEnd { align-content: flex-end }
-.alonCenter { align-content: center }
-.alonBetween { align-content: space-between }
-.alonAround { align-content: space-around }
-.alonStretch { align-content: stretch }
+.alon-start { align-content: flex-start }
+.alon-end { align-content: flex-end }
+.alon-center { align-content: center }
+.alon-between { align-content: space-between }
+.alon-around { align-content: space-around }
+.alon-stretch { align-content: stretch }
 
 /* align-items */
-.algnStart { align-items: flex-start }
-.algnEnd { align-items: flex-end }
-.algnCenter { align-items: center }
-.algnBaseline { align-items: baseline }
-.algnStretch { align-items: stretch }
+.algn-start { align-items: flex-start }
+.algn-end { align-items: flex-end }
+.algn-center { align-items: center }
+.algn-baseline { align-items: baseline }
+.algn-stretch { align-items: stretch }
 
 /* align-self */
-.selfAuto { align-self: auto }
-.selfStart { align-self: flex-start }
-.selfEnd { align-self: flex-end }
-.selfCenter { align-self: center }
-.selfBaseline { align-self: baseline }
-.selfStretch { align-self: stretch }
+.self-auto { align-self: auto }
+.self-start { align-self: flex-start }
+.self-end { align-self: flex-end }
+.self-center { align-self: center }
+.self-baseline { align-self: baseline }
+.self-stretch { align-self: stretch }
 
 @mixin color($val) { color: $val; }
 

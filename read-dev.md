@@ -16,3 +16,7 @@ http://api.fanyi.baidu.com/api/trans/vip/translate?q=earth&from=en&to=zh&appid=2
 20210930000961054earth1632986149242fNtyKCZ2rkb3p22EM9rV
 
 md5(2015063000000001apple143566028812345678)
+
+
+
+[Vue 3.x Demo ( TypeScript + Router + Vuex)](https://github.com/wisewrong/test-vue3-demo)

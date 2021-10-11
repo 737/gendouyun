@@ -1,0 +1,17 @@
+@import url("./reset.scss");
+@import url("./cstyle.scss");
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: $font-family;
+}
+code,
+kbd,
+samp,
+pre,
+time {
+    font-family: $font-family-monospace;
+}
