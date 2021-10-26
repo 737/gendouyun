@@ -5,7 +5,8 @@
     "main": "server.js",
     "scripts": {
         "start": "cross-env NODE_ENV=production node server.js",
-        "dev": "cd client && npm run dev && cd .."
+        "dev": "cd client && npm run dev && cd ..",
+        "build": "cd client && npm run build && cd .."
     },
     "author": "Arleigh",
     "license": "GPL-3.0",
