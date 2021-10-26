@@ -50,6 +50,7 @@ node_modules/
 /dist
 assets/dist/
 !assets/dist/.ares/
+/logs
 /npm-debug.log
 
 # sonar
