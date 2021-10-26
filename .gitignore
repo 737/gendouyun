@@ -47,6 +47,7 @@ Environment/Tomcat/Tomcat 7.0/webapps
 # nodejs
 node_modules/
 /.idea
+/dist
 assets/dist/
 !assets/dist/.ares/
 /npm-debug.log
