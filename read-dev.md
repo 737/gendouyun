@@ -8,15 +8,18 @@ npm install --registry=https://registry.npm.taobao.org
 
 
 
-
-
-http://api.fanyi.baidu.com/api/trans/vip/translate?q=earth&from=en&to=zh&appid=20210930000961054&salt=1632986149242&sign=e0ddd23798d4731a24c9a2df073bf1cd
-
-
-20210930000961054earth1632986149242fNtyKCZ2rkb3p22EM9rV
-
-md5(2015063000000001apple143566028812345678)
-
-
-
 [Vue 3.x Demo ( TypeScript + Router + Vuex)](https://github.com/wisewrong/test-vue3-demo)
+
+
+## 服务器
+
+1. https://www.ucloud.cn/site/active/new/kuaijie.html?utm_source=ydfeeds&utm_medium=display&utm_campaign=DD06yd&utm_term=06&ytag=06_DD06yd_ydfeeds_display#shanghai
+
+
+
+#### 参考
+> - https://hao.uisdc.com/
+> - https://search.chongbuluo.com/
+> - nginx+ssl+pm2 部署 nodejs 服务
+>> - https://www.jianshu.com/p/8d1f4759d65c
+>> - https://github.com/zhaofinger/finger-blog

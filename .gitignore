@@ -1,13 +1,3 @@
-# IntelliJ project files
-.idea
-.idea/
-*.iml
-*.ipr
-*.iws
-*.DS_Store
-rebel.xml
-target
-
 package-lock.json
 build.json
 
@@ -33,8 +23,7 @@ target/
 # nodejs
 node_modules/
 /.idea
-assets/dist/
-!assets/dist/.ares/
+/logs
 /npm-debug.log
 
 # dev model files

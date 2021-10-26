@@ -2,6 +2,12 @@
 @import url("./cstyle.scss");
 
 body,
+html {
+    font: 14px "Microsoft Yahei", Arial, "Hiragino Sans GB";
+    color: #666;
+}
+
+body,
 h1,
 h2,
 h3,
@@ -64,7 +70,7 @@ a {
     color: $color-text-muted;
 }
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: $color-text;
 }
 sup {
