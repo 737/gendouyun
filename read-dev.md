@@ -20,3 +20,6 @@ npm install --registry=https://registry.npm.taobao.org
 #### 参考
 > - https://hao.uisdc.com/
 > - https://search.chongbuluo.com/
+> - nginx+ssl+pm2 部署 nodejs 服务
+>> - https://www.jianshu.com/p/8d1f4759d65c
+>> - https://github.com/zhaofinger/finger-blog
