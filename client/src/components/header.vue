@@ -17,9 +17,6 @@
 <style lang="scss" scoped>
 header {
     display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: $height-header;
     border-bottom: 1px solid $color-border;

@@ -1,7 +1,7 @@
 
 
 <template>
-    <div class="sidebar">
+    <div class="sidebar df flex-column">
         <div class="tab-box">
             <a
                 :class="{ active: tabCurrent === 'search' }"
@@ -105,13 +105,7 @@ const handleTab = (e: string) => {
 
 <style lang="scss" scoped>
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: $height-header;
-    left: 0;
     width: $width-sidebar;
-    height: calc(100% - $height-header);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     background-color: $color-background-sidebar;

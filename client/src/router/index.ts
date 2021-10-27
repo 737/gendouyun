@@ -7,6 +7,10 @@ const Tools = () => import('../views/tools/index.vue');
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
+        redirect: '/search'
+    },
+    {
+        path: '/search',
         name: 'Search',
         component: Search,
     },

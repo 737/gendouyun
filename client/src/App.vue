@@ -1,8 +1,10 @@
 <template>
-    <div class="main">
-        <header-component></header-component>
+    <header-component></header-component>
+    <div class="df flex-auto flex-row">
         <side-bar-component></side-bar-component>
-        <router-view />
+        <div class="flex-auto">
+            <router-view />
+        </div>
     </div>
 </template>
 
@@ -26,7 +28,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 $primary-color: red;
 
-.title {
-    color: $color-primary;
+.main-content {
+    margin: $height-header 0 0 0;
+    display: flex;
+    justify-content: center;
 }
 </style>
