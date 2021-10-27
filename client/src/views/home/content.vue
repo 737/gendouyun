@@ -3,7 +3,7 @@
     <section class="main">
         <div class="main_article">
             <article>
-                <h1>博客</h1>
+                <h1>博客11</h1>
                 <p>
                     搭配 <code>blog</code> 插件与
                     <code>blog</code> 主题后，Pagic 可以用来写博客。
