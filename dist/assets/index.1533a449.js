@@ -1,0 +1,1 @@
+import{_ as e}from"./index.f7073a63.js";import{o as n,c as r}from"./vendor.b0792259.js";const o={};function c(t,a){return n(),r("div",null,"gendouyun building")}var i=e(o,[["render",c]]);export{i as default};
