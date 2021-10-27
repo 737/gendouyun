@@ -1,7 +1,7 @@
 
 <template>
     
-        <div>gendouyun build</div>
+        <div>gendouyun building</div>
     
 </template>
 

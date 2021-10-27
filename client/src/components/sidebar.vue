@@ -17,13 +17,13 @@
         <div class="search-box" v-if="tabCurrent === 'search'">
             <ul>
                 <li class="">
-                    <img src="../../assets/images/google.ico" /><a
+                    <img src="../assets/images/google.ico" /><a
                         data="https://www.google.com/"
                         >谷歌</a
                     >
                 </li>
                 <li class="current">
-                    <img src="../../assets/images/baidu.ico" /><a
+                    <img src="../assets/images/baidu.ico" /><a
                         data="https://www.baidu.com/"
                         >百度</a
                     >
@@ -231,24 +231,6 @@ const handleTab = (e: string) => {
                 background-color: white;
             }
         }
-    }
-}
-
-@media (max-width: 1199px) {
-    .nav-box {
-        font-size: 12px;
-        margin-left: 0;
-        padding-right: 0;
-    }
-
-    .nav-box dt {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    .nav-box {
-        display: none;
     }
 }
 </style>
