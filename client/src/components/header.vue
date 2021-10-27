@@ -5,8 +5,9 @@
         <h1><a href="/">Pagic</a></h1>
         <nav class="df">
             <ul class="df algn-center">
-                <li><a href="/themes/">快搜</a></li>
-                <li><a href="/plugins/">导航</a></li>
+                <li><router-link to="/search">快搜</router-link></li>
+                <li><router-link to="/navigation">导航</router-link></li>
+                <li><router-link to="/tools">H5工具</router-link></li>
             </ul>
         </nav>
     </header>
