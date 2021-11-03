@@ -2,7 +2,7 @@
     <header-component></header-component>
     <div class="df flex-auto flex-row">
         <side-bar-component></side-bar-component>
-        <div class="flex-auto">
+        <div class="flex-auto df">
             <router-view />
         </div>
     </div>

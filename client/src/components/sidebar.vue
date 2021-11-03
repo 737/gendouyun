@@ -3,71 +3,33 @@
 <template>
     <div class="sidebar df flex-column">
         <div class="tab-box">
-            <a
-                :class="{ active: tabCurrent === 'search' }"
-                @click="handleTab('search')"
-                >快搜</a
-            >
-            <a
-                :class="{ active: tabCurrent === 'nav' }"
-                @click="handleTab('nav')"
-                >导航</a
-            >
+            <a :class="{ active: tabCurrent === 'search' }" @click="handleTab('search')">快搜</a>
+            <a :class="{ active: tabCurrent === 'nav' }" @click="handleTab('nav')">导航</a>
         </div>
         <div class="search-box" v-if="tabCurrent === 'search'">
             <ul>
-                <li class="">
-                    <img src="../assets/images/google.ico" /><a
-                        data="https://www.google.com/"
-                        >谷歌</a
-                    >
-                </li>
-                <li class="current">
-                    <img src="../assets/images/baidu.ico" /><a
-                        data="https://www.baidu.com/"
-                        >百度</a
-                    >
+                <li class v-for="site in SITES" @click="handleSite(site)">
+                    <img :src="site.ico" />
+                    <a>{{ site.name }}</a>
                 </li>
             </ul>
         </div>
         <div class="nav-box df just-center" v-if="tabCurrent === 'nav'">
             <dl>
-                <dt style="top: 11px"><span class="show-list"></span></dt>
+                <dt style="top: 11px">
+                    <span class="show-list"></span>
+                </dt>
                 <dd class="current">
-                    <a
-                        href="#web"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >热闹推荐</a
-                    >
+                    <a href="#web" class="auto-scroll" data-offset="-20" data-speed="500">热闹推荐</a>
                 </dd>
-                <dd class="">
-                    <a
-                        href="#icon"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >图标ICON</a
-                    >
+                <dd class>
+                    <a href="#icon" class="auto-scroll" data-offset="-20" data-speed="500">图标ICON</a>
                 </dd>
-                <dd class="">
-                    <a
-                        href="#brush"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >笔刷纹理</a
-                    >
+                <dd class>
+                    <a href="#brush" class="auto-scroll" data-offset="-20" data-speed="500">笔刷纹理</a>
                 </dd>
                 <dd>
-                    <a
-                        href="#logo"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >Logo设计</a
-                    >
+                    <a href="#logo" class="auto-scroll" data-offset="-20" data-speed="500">Logo设计</a>
                 </dd>
                 <dd>
                     <a
@@ -75,17 +37,10 @@
                         class="auto-scroll"
                         data-offset="-20"
                         data-speed="500"
-                        >信息图</a
-                    >
+                    >信息图</a>
                 </dd>
                 <dd>
-                    <a
-                        href="#company"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >设计公司</a
-                    >
+                    <a href="#company" class="auto-scroll" data-offset="-20" data-speed="500">设计公司</a>
                 </dd>
             </dl>
         </div>
@@ -97,9 +52,28 @@ import { reactive, toRefs, computed, onMounted, onUnmounted, ref } from "vue";
 
 var tabCurrent = ref("search");
 
+const SITES = [{
+    name: 'Bing',
+    ico: '/src/assets/images/bing.ico',
+    url: 'https://www.bing.com/'
+}, {
+    name: '百度',
+    ico: '/src/assets/images/baidu.ico',
+    url: 'https://www.baidu.com/'
+}, {
+    name: '谷歌',
+    ico: '/src/assets/images/google.ico',
+    url: 'https://www.google.com/'
+}];
+
 const handleTab = (e: string) => {
     tabCurrent.value = e;
 };
+
+const handleSite = ({ url }: any) => {
+    console.log('url :>> ', url);
+};
+
 </script>
 
 
