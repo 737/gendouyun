@@ -1,0 +1,1 @@
+import{_ as e}from"./index.8ecb8d26.js";import{o as r,c as n}from"./vendor.96b6fbc5.js";const o={},c={class:"flex-auto",name:"engine",frameborder:"0",marginwidth:"0",marginheight:"0",allowtransparency:"true",style:{"background-color":"#fff"},src:"https://www.bing.com/"};function t(a,s){return r(),n("iframe",c)}var m=e(o,[["render",t]]);export{m as default};
