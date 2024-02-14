@@ -16,6 +16,9 @@ npm install --registry=https://registry.npm.taobao.org
 1. https://www.ucloud.cn/site/active/new/kuaijie.html?utm_source=ydfeeds&utm_medium=display&utm_campaign=DD06yd&utm_term=06&ytag=06_DD06yd_ydfeeds_display#shanghai
 
 
+// 极简插件
+https://chrome.zzzmh.cn/index
+
 
 #### 参考
 > - https://hao.uisdc.com/
