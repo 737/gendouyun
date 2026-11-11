@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-const Search = () => import('../views/search/index.vue');
+const Search = () => import('../views/Search/index.vue');
 const Navigation = () => import('../views/navigation/index.vue');
 const Tools = () => import('../views/tools/index.vue');
 

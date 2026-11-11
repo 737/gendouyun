@@ -8,7 +8,7 @@
         </div>
         <div class="search-box" v-if="tabCurrent === 'search'">
             <ul>
-                <li class v-for="site in SITES" @click="handleSite(site)">
+                <li v-for="site in SITES" :key="site.name" @click="handleSite(site)">
                     <img :src="site.ico" />
                     <a>{{ site.name }}</a>
                 </li>
@@ -22,10 +22,10 @@
                 <dd class="current">
                     <a href="#web" class="auto-scroll" data-offset="-20" data-speed="500">热闹推荐</a>
                 </dd>
-                <dd class>
+                <dd>
                     <a href="#icon" class="auto-scroll" data-offset="-20" data-speed="500">图标ICON</a>
                 </dd>
-                <dd class>
+                <dd>
                     <a href="#brush" class="auto-scroll" data-offset="-20" data-speed="500">笔刷纹理</a>
                 </dd>
                 <dd>
@@ -48,21 +48,30 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, toRefs, computed, onMounted, onUnmounted, ref } from "vue";
+import { ref } from "vue";
+import bingIco from "../assets/images/bing.ico";
+import baiduIco from "../assets/images/baidu.ico";
+import googleIco from "../assets/images/google.ico";
 
-var tabCurrent = ref("search");
+interface Site {
+    name: string;
+    ico: string;
+    url: string;
+}
 
-const SITES = [{
+const tabCurrent = ref("search");
+
+const SITES: Site[] = [{
     name: 'Bing',
-    ico: '/src/assets/images/bing.ico',
+    ico: bingIco,
     url: 'https://www.bing.com/'
 }, {
     name: '百度',
-    ico: '/src/assets/images/baidu.ico',
+    ico: baiduIco,
     url: 'https://www.baidu.com/'
 }, {
     name: '谷歌',
-    ico: '/src/assets/images/google.ico',
+    ico: googleIco,
     url: 'https://www.google.com/'
 }];
 
@@ -70,7 +79,7 @@ const handleTab = (e: string) => {
     tabCurrent.value = e;
 };
 
-const handleSite = ({ url }: any) => {
+const handleSite = ({ url }: Site) => {
     console.log('url :>> ', url);
 };
 

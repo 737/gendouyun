@@ -11,7 +11,6 @@ h5hotel4j.iml
 rebel.xml
 target
 
-package-lock.json
 build.json
 
 out
@@ -40,6 +39,7 @@ node_modules/
 /.idea
 /logs
 /npm-debug.log
+.tools/
 
 # dev model files
 cc.js

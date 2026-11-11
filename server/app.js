@@ -2,7 +2,7 @@ const path = require('path');
 const koa = require('koa');
 const helmet = require('koa-helmet');
 const staticServer = require('koa-static-cache');
-const LRU = require('lru-cache');
+const { LRUCache } = require('lru-cache');
 const bodyParser = require('koa-bodyparser');
 const Ignite = require('./ignite');
 
@@ -15,7 +15,7 @@ const instanceId = process.env.NODE_APP_INSTANCE || 'default';
 const vd = config.vd && config.vd !== '/' ? config.vd : '/';
 const port = config.port || process.env.PORT || 8080;
 // 避免OOM
-var files = new LRU({ max: 1000 });
+var files = new LRUCache({ max: 1000 });
 
 
 // app.use(async (ctx, next) => {

@@ -1,0 +1,1 @@
+import{d as n,o as a,c as o,a as t}from"./index-CSpHfA-Q.js";const l=n({__name:"index",setup(r){return(s,e)=>(a(),o("div",null,[...e[0]||(e[0]=[t("p",null,"navigation building",-1)])]))}});export{l as default};
