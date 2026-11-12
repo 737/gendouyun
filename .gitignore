@@ -48,3 +48,6 @@ cc1.json
 # 本地预览用的临时静态服务器与截图
 /.preview
 
+# 前端构建产物，由部署时的 npm run build 生成，不入库
+/dist
+
