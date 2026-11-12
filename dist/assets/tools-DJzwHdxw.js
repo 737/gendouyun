@@ -1,0 +1,1 @@
+import{_ as n,o,c as t,a as r}from"./index-BD0psGMI.js";const s={};function a(c,e){return o(),t("div",null,[...e[0]||(e[0]=[r("p",null,"tools building",-1)])])}const d=n(s,[["render",a]]);export{d as default};

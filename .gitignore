@@ -45,3 +45,6 @@ cc.txt
 cc.json
 cc1.json
 
+# 本地预览用的临时静态服务器与截图
+/.preview
+

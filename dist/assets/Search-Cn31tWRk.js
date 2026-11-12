@@ -1,1 +1,0 @@
-import{_ as e,o as r,c as n}from"./index-CSpHfA-Q.js";const t={},c={class:"flex-auto",name:"engine",frameborder:"0",marginwidth:"0",marginheight:"0",allowtransparency:"true",style:{"background-color":"#fff"},src:"https://www.bing.com/"};function o(a,s){return r(),n("iframe",c)}const i=e(t,[["render",o]]);export{i as default};
