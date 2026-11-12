@@ -13,7 +13,9 @@ const middleware = require('./middleware');
 const globalState = require('./middleware/global');
 const instanceId = process.env.NODE_APP_INSTANCE || 'default';
 const vd = config.vd && config.vd !== '/' ? config.vd : '/';
-const port = config.port || process.env.PORT || 8080;
+// 端口优先级：环境变量 PORT > package.json 的 config.port > 8080
+// 部署时由 systemd 等进程管理器通过 PORT 指定，仓库里的 config.port 仅作本地默认值
+const port = process.env.PORT || config.port || 8080;
 // 避免OOM
 var files = new LRUCache({ max: 1000 });
 
