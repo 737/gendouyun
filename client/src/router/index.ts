@@ -1,18 +1,28 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-const Home = () => import('../views/home/index.vue');
-const About = () => import('../views/about/index.vue');
+const Search = () => import('../views/Search/index.vue');
+const Navigation = () => import('../views/navigation/index.vue');
+const Tools = () => import('../views/tools/index.vue');
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
-        name: 'Home',
-        component: Home,
+        redirect: '/search'
     },
     {
-        path: '/about',
-        name: 'About',
-        component: About
+        path: '/search',
+        name: 'Search',
+        component: Search,
+    },
+    {
+        path: '/navigation',
+        name: 'navigation',
+        component: Navigation
+    },
+    {
+        path: '/tools',
+        name: 'Tools',
+        component: Tools
     },
 ];
 

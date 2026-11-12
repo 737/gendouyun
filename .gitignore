@@ -1,4 +1,16 @@
-package-lock.json
+# IntelliJ project files
+.idea
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea/artifacts/h5hotel4j_war_exploded.xml
+.idea/workspace.xml
+*.DS_Store
+h5hotel4j.iml
+rebel.xml
+target
+
 build.json
 
 out
@@ -25,6 +37,7 @@ node_modules/
 /.idea
 /logs
 /npm-debug.log
+.tools/
 
 # dev model files
 cc.js

@@ -1,73 +1,35 @@
 
 
 <template>
-    <div class="sidebar">
+    <div class="sidebar df flex-column">
         <div class="tab-box">
-            <a
-                :class="{ active: tabCurrent === 'search' }"
-                @click="handleTab('search')"
-                >快搜</a
-            >
-            <a
-                :class="{ active: tabCurrent === 'nav' }"
-                @click="handleTab('nav')"
-                >导航</a
-            >
+            <a :class="{ active: tabCurrent === 'search' }" @click="handleTab('search')">快搜</a>
+            <a :class="{ active: tabCurrent === 'nav' }" @click="handleTab('nav')">导航</a>
         </div>
         <div class="search-box" v-if="tabCurrent === 'search'">
             <ul>
-                <li class="">
-                    <img src="../../assets/images/google.ico" /><a
-                        data="https://www.google.com/"
-                        >谷歌</a
-                    >
-                </li>
-                <li class="current">
-                    <img src="../../assets/images/baidu.ico" /><a
-                        data="https://www.baidu.com/"
-                        >百度</a
-                    >
+                <li v-for="site in SITES" :key="site.name" @click="handleSite(site)">
+                    <img :src="site.ico" />
+                    <a>{{ site.name }}</a>
                 </li>
             </ul>
         </div>
         <div class="nav-box df just-center" v-if="tabCurrent === 'nav'">
             <dl>
-                <dt style="top: 11px"><span class="show-list"></span></dt>
+                <dt style="top: 11px">
+                    <span class="show-list"></span>
+                </dt>
                 <dd class="current">
-                    <a
-                        href="#web"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >热闹推荐</a
-                    >
-                </dd>
-                <dd class="">
-                    <a
-                        href="#icon"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >图标ICON</a
-                    >
-                </dd>
-                <dd class="">
-                    <a
-                        href="#brush"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >笔刷纹理</a
-                    >
+                    <a href="#web" class="auto-scroll" data-offset="-20" data-speed="500">热闹推荐</a>
                 </dd>
                 <dd>
-                    <a
-                        href="#logo"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >Logo设计</a
-                    >
+                    <a href="#icon" class="auto-scroll" data-offset="-20" data-speed="500">图标ICON</a>
+                </dd>
+                <dd>
+                    <a href="#brush" class="auto-scroll" data-offset="-20" data-speed="500">笔刷纹理</a>
+                </dd>
+                <dd>
+                    <a href="#logo" class="auto-scroll" data-offset="-20" data-speed="500">Logo设计</a>
                 </dd>
                 <dd>
                     <a
@@ -75,17 +37,10 @@
                         class="auto-scroll"
                         data-offset="-20"
                         data-speed="500"
-                        >信息图</a
-                    >
+                    >信息图</a>
                 </dd>
                 <dd>
-                    <a
-                        href="#company"
-                        class="auto-scroll"
-                        data-offset="-20"
-                        data-speed="500"
-                        >设计公司</a
-                    >
+                    <a href="#company" class="auto-scroll" data-offset="-20" data-speed="500">设计公司</a>
                 </dd>
             </dl>
         </div>
@@ -93,25 +48,47 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, toRefs, computed, onMounted, onUnmounted, ref } from "vue";
+import { ref } from "vue";
+import bingIco from "../assets/images/bing.ico";
+import baiduIco from "../assets/images/baidu.ico";
+import googleIco from "../assets/images/google.ico";
 
-var tabCurrent = ref("search");
+interface Site {
+    name: string;
+    ico: string;
+    url: string;
+}
+
+const tabCurrent = ref("search");
+
+const SITES: Site[] = [{
+    name: 'Bing',
+    ico: bingIco,
+    url: 'https://www.bing.com/'
+}, {
+    name: '百度',
+    ico: baiduIco,
+    url: 'https://www.baidu.com/'
+}, {
+    name: '谷歌',
+    ico: googleIco,
+    url: 'https://www.google.com/'
+}];
 
 const handleTab = (e: string) => {
     tabCurrent.value = e;
 };
+
+const handleSite = ({ url }: Site) => {
+    console.log('url :>> ', url);
+};
+
 </script>
 
 
 <style lang="scss" scoped>
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: $height-header;
-    left: 0;
     width: $width-sidebar;
-    height: calc(100% - $height-header);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     background-color: $color-background-sidebar;
@@ -237,24 +214,6 @@ const handleTab = (e: string) => {
                 background-color: white;
             }
         }
-    }
-}
-
-@media (max-width: 1199px) {
-    .nav-box {
-        font-size: 12px;
-        margin-left: 0;
-        padding-right: 0;
-    }
-
-    .nav-box dt {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    .nav-box {
-        display: none;
     }
 }
 </style>

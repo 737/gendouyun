@@ -1,8 +1,8 @@
 
 <template>
     <div>
-        <p>1234123412341</p>
-        <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+        <p>navigation building</p>
+        
     </div>
 </template>
 

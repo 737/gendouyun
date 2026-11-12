@@ -7,7 +7,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 const countter = ref(0);
 
-const handleClick = (e) => {
+const handleClick = (e: any) => {
     countter.value = countter.value + 1;
 };
 </script>
@@ -15,7 +15,7 @@ const handleClick = (e) => {
 <template>
     <img alt="Vue logo" src="./assets/logo.png" />
 
-    <button @click="handleClick">点我可以弹alert{{ countter }}</button>
+    <button @click="handleClick">点我可以弹alert{{ countter }}!</button>
     <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
