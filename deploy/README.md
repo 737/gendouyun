@@ -41,6 +41,49 @@ VPS / Ubuntu 24.04
  ⚙ 两条流量都在 ufw / fail2ban / BBR / systemd 之下运行
 ```
 
+### 要装的组件清单
+
+**系统与基础工具（第 2 步，`apt` 一把装完）**
+
+| 组件 | 作用 |
+| --- | --- |
+| Ubuntu 24.04 LTS | 操作系统，服务商镜像自带 |
+| `curl` / `wget` | 下载安装脚本、做健康检查 |
+| `git` | 拉取代码、后续 `git pull` 更新 |
+| `unzip` | Hysteria2 安装脚本解压安装包时用 |
+| `vim` | 改配置（Caddyfile / config.yaml / 订阅 yaml） |
+| `chrony` | NTP 校时；TLS 证书校验和 QUIC 握手都对时间敏感 |
+| `dnsutils` | 提供 `dig` / `nslookup`，查域名解析 |
+| `debian-keyring` `apt-transport-https` `gpg` | 给 Caddy 加第三方 apt 源时用 |
+
+**网站链路**
+
+| 组件 | 作用 | 装法 |
+| --- | --- | --- |
+| **Caddy** | 反向代理 + 自动申请/续期 HTTPS 证书 + `/sub/*` 静态文件 | apt（cloudsmith 官方源） |
+| **Node.js 24** | 运行 Koa 应用（`server.js`） | apt（NodeSource 官方源） |
+| `npm` | 装依赖、执行构建（随 Node 一起装） | — |
+| `vite` `vue-tsc`（devDependencies） | 把 `client/` 编译成 `dist/`，**只在构建时用** | `npm ci` |
+| `koa` `koa-static-cache` `koa-helmet` `lru-cache` | 应用运行时依赖：路由、静态托管、安全响应头、内存缓存 | `npm ci` |
+
+**代理链路**
+
+| 组件 | 作用 | 装法 |
+| --- | --- | --- |
+| **Hysteria2** | QUIC 代理服务端，监听 `443/udp` | `curl https://get.hy2.sh/` |
+| `hysteria-cert-sync` | 自写脚本 + systemd timer：把 Caddy 的证书复制给 hysteria，续期后自动重启它 | 手写（第 5 步 ③④） |
+
+**运维层（系统自带或轻量安装）**
+
+| 组件 | 作用 |
+| --- | --- |
+| **systemd** | 托管 Caddy / Node 应用 / Hysteria2：开机自启、崩溃自动拉起、日志进 journald |
+| **ufw** | 防火墙，只放行 22、80、443/tcp、443/udp |
+| **fail2ban** | 监听 SSH 失败登录，按 IP 封禁 |
+| **BBR + fq** | 内核拥塞控制算法，提升跨境链路吞吐（改 `sysctl`，不是装软件） |
+
+> 没有数据库、没有 Redis、没有 Docker、没有 nginx —— 这个项目是纯 Koa + 静态产物，`dist/` 加模板就能跑，别被“标准架构”带偏去装一堆用不上的东西。
+
 ---
 
 ## 部署步骤
@@ -50,7 +93,7 @@ VPS / Ubuntu 24.04
 - [x] 第 3 步：Caddy
 - [x] 第 4 步：Node 24 + 应用
 - [x] 第 5 步：Hysteria2
-- [ ] 第 6 步：ufw / fail2ban / BBR 收尾
+- [x] 第 6 步：ufw / fail2ban / BBR 收尾
 
 ---
 
