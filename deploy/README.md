@@ -5,14 +5,21 @@
 服务器整体架构
 
 ```
-                        ┌─────────── VPS / Ubuntu 24.04 ───────────┐
- 浏览器 ──443/tcp──▶ Caddy ──reverse_proxy──▶ Node 24 (:3000)
-                        │   └─ handle_path /sub/* ─▶ /srv/sub/*.yaml
-                        │
- 代理客户端 ──443/udp──▶ Hysteria2 (QUIC) ──▶ 互联网
-                        │
-                        └─ ufw / fail2ban / BBR / systemd ─────────┘
+VPS / Ubuntu 24.04
+├─ Caddy ── TCP 80/443
+│   ├─ 80/tcp   ← 浏览器：ACME 验证 + 308 跳转 https
+│   ├─ 443/tcp  ← 浏览器：TLS 终止 → reverse_proxy → Node 24 (127.0.0.1:3000)
+│   │              Node 只监听回环，公网进不来
+│   └─ handle_path /sub/*  →  磁盘 /srv/sub/（剥掉 /sub 前缀，不限扩展名）
+│          URL /sub/a.yaml  ⇒  文件 /srv/sub/a.yaml
+│
+├─ Hysteria2 ── UDP 443（QUIC）← 代理客户端，出口到互联网
+│   └─ TLS 证书复用 Caddy 签发的那张（timer 每 6h 同步副本）
+│
+└─ ufw / fail2ban / BBR / systemd
 ```
+
+> 同一个 443 端口被两个服务共用：TCP 给 Caddy，UDP 给 Hysteria2，互不冲突。
 
 ---
 
