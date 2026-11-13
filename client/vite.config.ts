@@ -19,5 +19,21 @@ export default defineConfig({
     outDir: fileURLToPath(new URL('../dist', import.meta.url)),
     assetsDir: 'assets',
     emptyOutDir: true,
+    // Node 22 + 现代浏览器，不必为 ES5 语法付出体积代价
+    target: 'es2020',
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        // 框架代码单独成块：业务代码改动时用户不用重新下载 vue 运行时，
+        // 两者也能并行下载（产物文件名带哈希，服务端已配 immutable 长缓存）
+        manualChunks: {
+          vendor: ['vue', 'vue-router'],
+        },
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash][extname]',
+      },
+    },
   },
 })
