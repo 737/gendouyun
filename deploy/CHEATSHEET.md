@@ -58,7 +58,7 @@ curl -I https://www.gendouyun.cn      # 502 = 链路已通（Node 还没起）
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
 apt install -y nodejs
-node -v                               # 必须 >= 22.23.4
+node -v                               # 必须 >= 24.22.3
 
 adduser --system --group --no-create-home --home /opt/gendouyun --shell /usr/sbin/nologin gendouyun
 

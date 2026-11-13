@@ -288,7 +288,7 @@ rm -f /srv/sub/_health.yaml                       # 测完删掉：/sub 目录�
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
 apt install -y nodejs
-node -v && npm -v          # 期望 v24.x.x / 11.x，node 必须 >= 22.23.4
+node -v && npm -v          # 期望 v24.x.x / 11.x，node 必须 >= 24.22.3
 ```
 
 ### ② 建运行用户 + 配 Deploy key + 拉代码
@@ -410,7 +410,7 @@ ss -lntp | grep 3000                         # 只看到 127.0.0.1:3000，不是
 
 - **不要**用 `npm start` 在终端里前台跑；`npm start` 只是本地调试用，线上交给 systemd。
 - 若 `journalctl` 出现 `[ignite] 初始化失败` 且提到 `ENOENT ... dist/index.html`，说明构建没做或失败，回 ③ 重跑。
-- `node -v` 低于 22.23.4 会被 `package.json` 的 engines 卡住，用第 ① 步的 NodeSource 源重装，别用 `apt install nodejs`（24.04 自带的是 18）。
+- `node -v` 低于 24.22.3 会被 `package.json` 的 engines 卡住，用第 ① 步的 NodeSource 源重装，别用 `apt install nodejs`（24.04 自带的是 18）。
 - 更新发布流程（以后常用）：
 
   ```bash

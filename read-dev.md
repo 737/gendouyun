@@ -1,9 +1,9 @@
 ## 本地开发
 
-Node 版本：**22.23.4**（见 `.nvmrc`）
+Node 版本：**24.22.3**（见 `.nvmrc`）
 
 ```bash
-nvm use 22.23.4
+nvm use 24.22.3
 
 # 根目录安装一次即可（npm workspaces 会一并安装 client 依赖）
 npm install

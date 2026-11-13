@@ -4,16 +4,16 @@
 
 ## 环境要求
 
-- Node.js **22.23.4**（仓库内 `.nvmrc` 已固定该版本，`nvm` / `fnm` / `volta` 均能识别）
-- npm **10.9.9**（随 Node 22.23.4 一并安装）
+- Node.js **24.22.3**（当前 24.x LTS，仓库内 `.nvmrc` 已固定该版本，`nvm` / `fnm` / `volta` 均能识别）
+- npm **11.19.1**（随 Node 24.22.3 一并安装）
 
 ```bash
 # nvm-windows / nvm
-nvm install 22.23.4
-nvm use 22.23.4
+nvm install 24.22.3
+nvm use 24.22.3
 
-node -v   # v22.23.4
-npm -v    # 10.9.9
+node -v   # v24.22.3
+npm -v    # 11.19.1
 ```
 
 ## 安装
@@ -58,7 +58,7 @@ npm install
 
 | 组件 | 版本 |
 | --- | --- |
-| Node.js | 22.23.4 |
+| Node.js | 24.22.3 |
 | Koa | 3.x |
 | @koa/router | 15.x |
 | Vue | 3.5.x |
@@ -67,7 +67,16 @@ npm install
 | TypeScript | 5.9.x |
 | vue-tsc | 3.x |
 
-## 升级说明（Node 10 → Node 22.23.4）
+## 升级说明
+
+### Node 22.23.4 → Node 24.22.3（2026-11）
+
+- 版本基线：`.nvmrc` = `24.22.3`，`package.json` 的 `engines` 要求 `node >= 24.22.3`、`npm >= 11.19.1`。
+- 前端类型：`@types/node` `22.x` → `24.x`（`^24.19.2`），与服务端运行时的大版本对齐。
+- 代码零改动：Koa 3 要求 `node >= 18`、Vite 7 要求 `node >= 20.19`，Node 24 均满足；本次只动版本基线。
+- 线上重装：按 `deploy/README.md` 第 4 步用 NodeSource `setup_24.x` 装到 24.x 即可，不需要改 systemd 单元。
+
+### Node 10 → Node 22.23.4（框架大版本升级，历史记录）
 
 - 版本基线：`.nvmrc` = `22.23.4`，`package.json` 的 `engines` 要求 `node >= 22.23.4`、`npm >= 10.9.9`。
 - 服务端：`koa` 2 → 3，`koa-router`（已废弃）→ `@koa/router` 15，`koa-helmet` 5 → 9（`helmet` 8 改为显式依赖），

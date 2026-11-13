@@ -19,7 +19,7 @@ export default defineConfig({
     outDir: fileURLToPath(new URL('../dist', import.meta.url)),
     assetsDir: 'assets',
     emptyOutDir: true,
-    // Node 22 + 现代浏览器，不必为 ES5 语法付出体积代价
+    // Node 24 + 现代浏览器，不必为 ES5 语法付出体积代价
     target: 'es2020',
     cssCodeSplit: true,
     chunkSizeWarningLimit: 600,
