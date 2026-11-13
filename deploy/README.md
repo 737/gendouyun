@@ -21,6 +21,26 @@ VPS / Ubuntu 24.04
 
 > 同一个 443 端口被两个服务共用：TCP 给 Caddy，UDP 给 Hysteria2，互不冲突。
 
+数据流向（把上面那张图拆成两条独立的流量）：
+
+```
+ ① 网站流量（TCP）
+
+   浏览器 ══80/tcp══▶ Caddy ──308──▶ 跳转 https（并顺带完成 ACME 证书签发）
+          ══443/tcp═▶ Caddy ──reverse_proxy──▶ Node 24 @127.0.0.1:3000
+                         │
+                         └── handle_path /sub/* ──▶ 磁盘 /srv/sub/
+                              /sub/a.yaml  ⇒  /srv/sub/a.yaml
+
+ ② 代理流量（UDP，同一端口的另一个方向）
+
+   客户端 ══443/udp══▶ Hysteria2 (QUIC) ──▶ 互联网
+                         │
+                         └── TLS 证书 ◀── Caddy 签发，timer 每 6h 同步副本
+
+ ⚙ 两条流量都在 ufw / fail2ban / BBR / systemd 之下运行
+```
+
 ---
 
 ## 部署步骤
